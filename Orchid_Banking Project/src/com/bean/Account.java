@@ -17,15 +17,26 @@ public class Account
 		private int accNo;
 		private String accType;
 		private float accBal;
+		public static String ifscCode;
+		public static int accVal;
 		
-	public Account(int accNo, String accType,float accBal) 
+	//Static Block for initialization of static data
+	
+	static
+	{
+		accVal=1;
+		ifscCode = "MAHB00046";
+	}
+		
+	public Account(String accType,float accBal) 
 	{		
-		this.accNo = accNo;
+		this.accNo = accVal;
 		this.accType = accType;
 		this.accBal = accBal;
 		//System.out.println("Data inside constructor:Account Number: "+accNo+"\nAccount Type: "+accType+"\nAccount balance:"+accBal);
 		//If we print only this reference then also we get object content as it refers to current object.
 		//System.out.println(this);
+		accVal++;
 	}
 	
 	public void setAccNo(int accNo)

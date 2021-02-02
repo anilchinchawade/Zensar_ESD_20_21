@@ -10,8 +10,13 @@ public class AccountServices
 	// Business Logic Method
 	public int openAccount(String accType, float amount)
 	{
-		acc = new Account(100,accType,amount);
+		acc = new Account(accType,amount);
 		return acc.getAccNo(); //Acknowledging Account number to customer
+	}
+	
+	public static String getIfscCode()
+	{
+		return Account.ifscCode;
 	}
 	
 	public String displayAccountDetails(int accNo)
